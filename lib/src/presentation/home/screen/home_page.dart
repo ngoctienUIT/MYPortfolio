@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../core/utils/constants/constants.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff2d2e32),
+      backgroundColor: AppColors.bgColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(15),
               child: Row(
                 children: [
                   const Text(
@@ -59,159 +61,88 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: 80),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const Column(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "FullStack Developer",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.bgTextFT,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            offset: const Offset(-10, 10),
+                            blurRadius: 10,
+                          ),
+                        ],
                       ),
+                      padding: const EdgeInsets.all(10),
+                      child: const Text("FullStack Developer"),
                     ),
-                    Text("FullStack Developer"),
-                    Text("FullStack Developer"),
-                    Text("FullStack Developer"),
+                    const SizedBox(height: 30),
+                    const Text(
+                      "Talk is cheap.",
+                      style: TextStyle(fontSize: 30, color: Colors.white),
+                    ),
+                    const Text(
+                      "Show me the code",
+                      style: TextStyle(fontSize: 30, color: Colors.white),
+                    ),
+                    const SizedBox(height: 30),
+                    const Text(
+                      "I design and code beautifully simple things, and I love that I do.",
+                      style: TextStyle(color: Colors.grey),
+                    ),
                   ],
                 ),
                 Stack(
                   children: [
                     Container(
-                      height: 500,
-                      width: 500,
+                      height: 600,
+                      width: 600,
                       decoration: BoxDecoration(
-                        color: const Color(0xff29282d),
+                        color: AppColors.bgAvt,
                         borderRadius: BorderRadius.circular(360),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.4),
-                            offset: const Offset(0.0, 2.5), //(x,y)
-                            blurRadius: 10,
-                          ),
-                        ],
                       ),
                     ),
-                    Image.asset(
-                      "assets/images/avatar.png",
-                      height: 500,
+                    Image.asset(AppImages.imgAvatar, height: 600),
+                    iconWidget(
+                      right: 50,
+                      top: 200,
+                      size: 50,
+                      padding: 10,
+                      icon: AppImages.imgSpring,
                     ),
-                    Positioned(
-                      right: 40,
-                      bottom: 250,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff25262a),
-                          borderRadius: BorderRadius.circular(360),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.4),
-                              offset: const Offset(0.0, 2.5), //(x,y)
-                              blurRadius: 10,
-                            ),
-                          ],
-                        ),
-                        padding: const EdgeInsets.all(10),
-                        child: Image.asset(
-                          "assets/images/spring.png",
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
-                    ),
-                    Positioned(
+                    iconWidget(
+                      padding: 10,
+                      size: 50,
                       left: 70,
-                      top: 150,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff25262a),
-                          borderRadius: BorderRadius.circular(360),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.4),
-                              offset: const Offset(0.0, 2.5), //(x,y)
-                              blurRadius: 10,
-                            ),
-                          ],
-                        ),
-                        padding: const EdgeInsets.all(10),
-                        child: Image.asset(
-                          "assets/images/spring_boot.png",
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
+                      top: 180,
+                      icon: AppImages.imgSpringBoot,
                     ),
-                    Positioned(
-                      left: 150,
-                      top: 30,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff25262a),
-                          borderRadius: BorderRadius.circular(360),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.4),
-                              offset: const Offset(0.0, 2.5), //(x,y)
-                              blurRadius: 10,
-                            ),
-                          ],
-                        ),
-                        padding: const EdgeInsets.all(10),
-                        child: Image.asset(
-                          "assets/images/java.png",
-                          height: 30,
-                          width: 30,
-                        ),
-                      ),
+                    iconWidget(
+                      padding: 10,
+                      size: 30,
+                      left: 180,
+                      top: 50,
+                      icon: AppImages.imgJava,
                     ),
-                    Positioned(
-                      left: 10,
+                    iconWidget(
+                      left: 30,
                       bottom: 50,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff25262a),
-                          borderRadius: BorderRadius.circular(360),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.4),
-                              offset: const Offset(0.0, 2.5), //(x,y)
-                              blurRadius: 10,
-                            ),
-                          ],
-                        ),
-                        padding: const EdgeInsets.all(0),
-                        child: Image.asset(
-                          "assets/images/dart.png",
-                          height: 80,
-                          width: 80,
-                        ),
-                      ),
+                      size: 80,
+                      icon: AppImages.imgDart,
                     ),
-                    Positioned(
+                    iconWidget(
                       right: 0,
-                      bottom: 30,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff25262a),
-                          borderRadius: BorderRadius.circular(360),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.4),
-                              offset: const Offset(0.0, 2.5), //(x,y)
-                              blurRadius: 10,
-                            ),
-                          ],
-                        ),
-                        padding: const EdgeInsets.all(15),
-                        child: Image.asset(
-                          "assets/images/flutter.png",
-                          height: 80,
-                          width: 80,
-                        ),
-                      ),
+                      bottom: 50,
+                      padding: 15,
+                      size: 80,
+                      icon: AppImages.imgFlutter,
                     ),
                   ],
                 )
@@ -219,6 +150,38 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget iconWidget({
+    double? left,
+    double? top,
+    double? right,
+    double? bottom,
+    double? size,
+    double padding = 0,
+    required String icon,
+  }) {
+    return Positioned(
+      left: left,
+      right: right,
+      top: top,
+      bottom: bottom,
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.bgIcon,
+          borderRadius: BorderRadius.circular(360),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              offset: const Offset(-10, 10),
+              blurRadius: 10,
+            ),
+          ],
+        ),
+        padding: EdgeInsets.all(padding),
+        child: Image.asset(icon, height: size, width: size),
       ),
     );
   }
