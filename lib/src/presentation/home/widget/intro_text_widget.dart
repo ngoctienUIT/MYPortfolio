@@ -11,6 +11,7 @@ class IntroTextWidget extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double fontSize = width < 800 ? 1 : (width > 1200 ? 1 : 0.875);
     double? paddingText = width < 800 ? null : width;
+
     return Column(
       children: [
         Container(
@@ -78,7 +79,9 @@ class IntroTextWidget extends StatelessWidget {
         SizedBox(height: 100.h),
         Container(
           width: paddingText != null ? paddingText * 0.4 : paddingText,
-          padding: const EdgeInsets.symmetric(horizontal: 50),
+          padding: paddingText != null
+              ? const EdgeInsets.symmetric(horizontal: 50)
+              : null,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

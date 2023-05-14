@@ -13,57 +13,63 @@ class ProfileAvatarWidget extends StatelessWidget {
     double avtSize = width < 800 ? 450 : (width > 1200 ? 600 : 450);
     avtSize = checkSizeScreen(context) ? avtSize.h : avtSize.w;
     double iconSize = width < 800 ? 0.75 : (width > 1200 ? 1 : 1);
-    return Stack(
-      children: [
-        Container(
-          height: avtSize,
-          width: avtSize,
-          decoration: BoxDecoration(
-            color: AppColors.bgAvt,
-            borderRadius: BorderRadius.circular(360),
+
+    return SizedBox(
+      width: width < 800 ? avtSize : null,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            height: avtSize,
+            width: avtSize,
+            decoration: BoxDecoration(
+              color: AppColors.bgAvt,
+              borderRadius: BorderRadius.circular(360),
+            ),
           ),
-        ),
-        Image.asset(AppImages.imgAvatar, height: avtSize),
-        iconWidget(
-          right: 50,
-          top: 200,
-          size: 50,
-          padding: 10,
-          iconSize: iconSize,
-          icon: AppImages.imgSpring,
-        ),
-        iconWidget(
-          padding: 10,
-          size: 50,
-          left: 70,
-          top: 180,
-          iconSize: iconSize,
-          icon: AppImages.imgSpringBoot,
-        ),
-        iconWidget(
-          padding: 10,
-          size: 30,
-          left: 180,
-          top: 50,
-          iconSize: iconSize,
-          icon: AppImages.imgJava,
-        ),
-        iconWidget(
-          left: 30,
-          bottom: 50,
-          size: 80,
-          iconSize: iconSize,
-          icon: AppImages.imgDart,
-        ),
-        iconWidget(
-          right: 0,
-          bottom: 50,
-          padding: 15,
-          size: 80,
-          iconSize: iconSize,
-          icon: AppImages.imgFlutter,
-        ),
-      ],
+          Image.asset(AppImages.imgAvatar, height: avtSize),
+          iconWidget(
+            right: 50,
+            top: 230,
+            size: 60,
+            padding: 10,
+            iconSize: iconSize,
+            icon: AppImages.imgSpring,
+          ),
+          iconWidget(
+            padding: 10,
+            size: 50,
+            left: 80,
+            top: 200,
+            iconSize: iconSize,
+            icon: AppImages.imgSpringBoot,
+          ),
+          iconWidget(
+            padding: 10,
+            size: 30,
+            left: 180,
+            top: 50,
+            iconSize: iconSize,
+            icon: AppImages.imgJava,
+          ),
+          iconWidget(
+            left: 30,
+            bottom: 70,
+            size: 80,
+            iconSize: iconSize,
+            padding: 10,
+            icon: AppImages.imgDart,
+          ),
+          iconWidget(
+            right: 0,
+            bottom: 50,
+            padding: 15,
+            size: 80,
+            iconSize: iconSize,
+            icon: AppImages.imgFlutter,
+          ),
+        ],
+      ),
     );
   }
 

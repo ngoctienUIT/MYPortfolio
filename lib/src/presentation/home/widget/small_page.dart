@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tnt_portfolio/src/presentation/home/widget/introduce_widget.dart';
+import 'package:tnt_portfolio/src/presentation/home/widget/major_widget.dart';
+import 'package:tnt_portfolio/src/presentation/home/widget/repositories_widget.dart';
 
+import '../../../core/utils/constants/constants.dart';
 import 'intro_text_widget.dart';
 import 'profile_avatar_widget.dart';
 import 'social_widget.dart';
@@ -13,24 +17,41 @@ class SmallPage extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(720, 1280));
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+      child: Column(
+        children: [
+          Container(
+            color: AppColors.bgColor,
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                usernameWidget(),
-                const Spacer(),
-                const SocialWidget(),
+                Row(
+                  children: [
+                    usernameWidget(),
+                    const Spacer(),
+                    const SocialWidget(),
+                  ],
+                ),
+                SizedBox(height: 50.h),
+                const IntroTextWidget(),
+                SizedBox(height: 80.h),
+                const Center(child: ProfileAvatarWidget()),
               ],
             ),
-            SizedBox(height: 80.h),
-            const ProfileAvatarWidget(),
-            SizedBox(height: 50.h),
-            const IntroTextWidget(),
-          ],
-        ),
+          ),
+          Container(
+            color: AppColors.bgIcon,
+            child: Column(
+              children: [
+                const IntroduceWidget(),
+                SizedBox(height: 50.h),
+                const MajorWidget(),
+                SizedBox(height: 50.h),
+              ],
+            ),
+          ),
+          const RepositoriesWidget(),
+        ],
       ),
     );
   }
