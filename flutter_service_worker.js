@@ -10,7 +10,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "76c25f861da6837a00fb4ba77df1fe6d
 "assets/assets/fonts/consolas/consolai.ttf": "5edcabeaacc62c4d8c7a8a2c281db68c",
 "assets/assets/images/android.svg": "cd86246f5bce79803cbd2a98b8592e62",
 "assets/assets/images/avatar.png": "83a20eebe8b64b96dd7e1ff399fba6b0",
-"assets/assets/images/dart.png": "726f7983238a75864800298a37557b79",
+"assets/assets/images/dart.png": "0bbce9fa38a6d699b585fd467f410120",
 "assets/assets/images/flutter.png": "07d1384be3c1bd05e88d2e4f5acc4c59",
 "assets/assets/images/github.png": "43ce87609eb221d09d4832a9c0e709d0",
 "assets/assets/images/icon.png": "677d1b6b162c34fe254d5816af46c8e0",
@@ -38,9 +38,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "76c25f861da6837a00fb4ba77df1fe6d
 "icons/Icon-512.png": "986b2afa446c7dfb932478ab2359e0d0",
 "icons/Icon-maskable-192.png": "ec5649cc5d03db1c59feb52b6b44f887",
 "icons/Icon-maskable-512.png": "986b2afa446c7dfb932478ab2359e0d0",
-"index.html": "bf1062d213afd007599960c3a22084d1",
-"/": "bf1062d213afd007599960c3a22084d1",
-"main.dart.js": "babe3cbb10e0c6f78429976ca4d34f57",
+"index.html": "56682d58de97b961b8c36cac22db94b8",
+"/": "56682d58de97b961b8c36cac22db94b8",
+"main.dart.js": "6dcea6705768c05f3fdc7788b9792b60",
 "manifest.json": "0552223d3f377a4a07974e95ee3acce2",
 "version.json": "5255f917a2660b5f3b2e2a4aa435546f"};
 // The application shell files that are downloaded before a service worker can
